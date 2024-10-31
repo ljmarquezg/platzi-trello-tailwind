@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, signal, WritableSignal } from '@angular/core';
 import {OverlayModule} from '@angular/cdk/overlay';
 import { BtnComponent } from '../btn/btn.component';
-import {faBell, faSearch} from '@fortawesome/free-solid-svg-icons';
+import {faAngleDown, faBars, faBell, faSearch} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProfileComponent } from "../profile/profile.component";
 
@@ -25,4 +25,6 @@ export class NavbarComponent {
 
   faBell = faBell;
   faSearch = faSearch;
+  faAngleDown = faAngleDown;
+  faBars = faBars;
 }
