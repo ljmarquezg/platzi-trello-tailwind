@@ -1,0 +1,108 @@
+<app-navbar />
+<div class="container mx-auto flex text-gray-600 space-x-8">
+    <div class="w-48 divide-y divide-gray-100 space-y-2 text-xs">
+        <ul class="space-y-1">
+            <li>
+                <a 
+                    href="#"
+                    class="block py-2 px-4 bg-primary-100 hover:bg-gray-100 dark:hover:bg-gray-200 rounded-md"
+                ><fa-icon [icon]="faTrello" class="pr-1"></fa-icon>Boards</a>
+            </li>
+            <li>
+                <a 
+                    href="#"
+                    class="block py-2 px-4  hover:bg-gray-100 dark:hover:bg-gray-200 rounded-md"
+                ><fa-icon [icon]="faBorderTopLeft" class="pr-1"></fa-icon>Templates</a>
+            </li>
+            <li>
+                <a 
+                    href="#"
+                    class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-200 rounded md"
+                ><fa-icon [icon]="faHomeUser" class="pr-1"></fa-icon>Home</a>
+            </li>
+        </ul>
+        <div class="text-xs">
+            <h1 class="mt-3 font-semibold">Your boards</h1>
+            <ul class="py-1">
+                <li>
+                    <a 
+                        href="#"
+                        class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-200"
+                    ><fa-icon [icon]="faGear" class="pr-1"></fa-icon>Settings</a>
+                </li>
+                <li>
+                    <a 
+                        href="#"
+                        class="block py-2 px-4  hover:bg-gray-100 dark:hover:bg-gray-200"
+                    >Activity</a>
+                </li>
+                <li>
+                    <a 
+                        href="#"
+                        class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-200"
+                    >Cards</a>
+                </li>
+                <li>
+                    <a 
+                        href="#"
+                        class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600"
+                    >Settings</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="w-9/12 space-y-12">
+        <!--Starred Boards-->
+        <div class="">
+            <h2 class="font-semibold mb-2"><fa-icon [icon]="faStar" class="pr-1"></fa-icon>Starred Boards</h2>
+            <div class="grid grid-cols-4 gap-4">
+                <app-board-card label="Board 1" bgColor="primary" [isStarred]="true"/>
+                <app-board-card label="Board 2" bgColor="success" [isStarred]="true"/>
+            </div>
+        </div>
+        <!--Recently Viewed-->
+        <div class="">
+            <h2 class="font-semibold mb-2"><fa-icon [icon]="faClock" class="pr-1"></fa-icon>Recently Viewed</h2>
+            <div class="grid grid-cols-4 gap-2">
+                <app-board-card label="Board 1" bgColor="primary" [isStarred]="true"/>
+                <app-board-card label="Board 2" bgColor="success" [isStarred]="true"/>
+                <app-board-card label="Board 3" bgColor="default"/>
+                <app-board-card label="Board 4" bgColor="danger"/>
+                <app-board-card label="Create New"/>
+            </div>
+        </div>
+        <!--Your Workspaces-->
+        <div class="">
+            <h2 class="font-semibold mb-2"><fa-icon [icon]="faClock" class="pr-1"></fa-icon>Your Workspaces</h2>
+            <div class="flex mb-4 justify-between">
+                <div class="mr-3 flex items-center">
+                    <img src="https://i.pravatar.cc/400" alt="workspace" class="w-12 h-12 rounded-md" />
+                    <p class="ml-3 text-md font-semibold text-color-gray-400">Luis Marquez's Workspace</p>
+                </div>
+                <div class="flex space-x-2 self-center">
+                    <app-btn color="default" size="xs" class="flex items-center">
+                        <fa-icon [icon]="faTableColumn" /> Boards
+                    </app-btn>
+                    <app-btn color="default" size="xs" class="flex items-center">
+                        <fa-icon [icon]="faTableColumn" /> Views
+                    </app-btn>
+                    <app-btn color="default" size="xs" class="flex items-center">
+                        <fa-icon [icon]="faUser" /> Members (1)
+                    </app-btn>
+                    <app-btn color="default" size="xs" class="flex items-center">
+                        <fa-icon [icon]="faGear" /> Settings
+                    </app-btn>
+                    <app-btn color="default" size="xs" class="flex items-center">
+                        <fa-icon [icon]="faSuitcase" /> Upgrade
+                    </app-btn>
+                </div>
+            </div>
+            <div class="grid grid-cols-4 gap-2">
+                <app-board-card label="Board 1" bgColor="primary"/>
+                <app-board-card label="Board 2" bgColor="success"/>
+                <app-board-card label="Board 3" bgColor="gray"/>
+                <app-board-card label="Board 4" bgColor="danger"/>
+            </div>
+        </div>
+    </div>
+</div>
