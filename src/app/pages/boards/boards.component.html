@@ -1,5 +1,6 @@
-<app-navbar />
-<div class="container mx-auto flex text-gray-600 space-x-8">
+<div class="flex flex-col h-screen">
+    <app-navbar />
+    <div class="container mx-auto flex text-gray-600 space-x-8 px-4 pt-8 pb-4">
     <div class="w-48 divide-y divide-gray-100 space-y-2 text-xs">
         <ul class="space-y-1">
             <li>
@@ -120,7 +121,7 @@
         </div>
     </div>
 
-    <cdk-accordion>
+    <!-- <cdk-accordion>
         @for(item of items(); track item; let idx = $index) {
             <cdk-accordion-item #accordionItem="cdkAccordionItem">
             <button 
@@ -138,5 +139,6 @@
                 </ul>
             </cdk-accordion-item>
         }
-    </cdk-accordion>
+    </cdk-accordion> -->
+    </div>
 </div>
