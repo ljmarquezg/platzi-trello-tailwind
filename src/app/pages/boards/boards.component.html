@@ -26,8 +26,8 @@
             <cdk-accordion class="example-accordion">
                 <cdk-accordion-item 
                     #accordionItem="cdkAccordionItem"
-                    (opened)="isExpanded(accordionItem.expanded)"
-                    (closed)="isExpanded(accordionItem.expanded)"
+                    (opened)="singleExpanded(accordionItem.expanded)"
+                    (closed)="singleExpanded(accordionItem.expanded)"
                 >
                     <button 
                         class="w-full flex justify-start items-middle py-2 px-2 hover:bg-gray-100 dark:hover:bg-gray-200 rounded-md"
@@ -119,4 +119,24 @@
             </div>
         </div>
     </div>
+
+    <cdk-accordion>
+        @for(item of items(); track item; let idx = $index) {
+            <cdk-accordion-item #accordionItem="cdkAccordionItem">
+            <button 
+                class="w-full text-left flex justify-between items-center font-semibold"
+                (click)="accordionItem.toggle()"
+            >
+                {{item.label}} <fa-icon [icon]="accordionItem.expanded ? faAngleUp : faAngleDown" class="ml-auto"></fa-icon>
+            </button>
+                <ul [style.display]="accordionItem.expanded ? '' : 'none'">
+                    @for(subItem of item.items; track subItem) {
+                        <li>
+                            {{subItem.label}}
+                        </li>
+                    }
+                </ul>
+            </cdk-accordion-item>
+        }
+    </cdk-accordion>
 </div>
