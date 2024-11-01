@@ -68,7 +68,7 @@
     </div>
     <div class="w-9/12 space-y-12">
         <!--Starred Boards-->
-        <div class="">
+        <div class="boards">
             <h2 class="font-semibold mb-2"><fa-icon [icon]="faStar" class="pr-1"></fa-icon>Starred Boards</h2>
             <div class="grid grid-cols-4 gap-4">
                 <app-board-card label="Board 1" bgColor="primary" [isStarred]="true"/>
@@ -76,7 +76,7 @@
             </div>
         </div>
         <!--Recently Viewed-->
-        <div class="">
+        <div class="recenty-viewed">
             <h2 class="font-semibold mb-2"><fa-icon [icon]="faClock" class="pr-1"></fa-icon>Recently Viewed</h2>
             <div class="grid grid-cols-4 gap-2">
                 <app-board-card label="Board 1" bgColor="primary" [isStarred]="true"/>
@@ -87,7 +87,7 @@
             </div>
         </div>
         <!--Your Workspaces-->
-        <div class="">
+        <div class="workspaces">
             <h2 class="font-semibold mb-2"><fa-icon [icon]="faClock" class="pr-1"></fa-icon>Your Workspaces</h2>
             <div class="flex mb-4 justify-between">
                 <div class="mr-3 flex items-center">

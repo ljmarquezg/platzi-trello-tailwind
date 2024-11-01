@@ -1,4 +1,4 @@
-import { Component, signal, WritableSignal } from "@angular/core";
+import { Component, inject, signal, WritableSignal } from "@angular/core";
 import {
   CdkDrag,
   CdkDragDrop,
@@ -9,7 +9,7 @@ import {
   transferArrayItem,
 } from "@angular/cdk/drag-drop";
 import { NavbarComponent } from "../../components/navbar/navbar.component";
-import { Column } from "../../models/todo.model";
+import ToDo, { Column } from "../../models/todo.model";
 import { BtnComponent } from "../../components/btn/btn.component";
 import {
   faAngleDown,
@@ -19,11 +19,13 @@ import {
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 import { CdkOverlayOrigin, OverlayModule } from "@angular/cdk/overlay";
+import { Dialog } from "@angular/cdk/dialog";
 import { CommonModule } from "@angular/common";
 import { CdkAccordion, CdkAccordionItem } from "@angular/cdk/accordion";
 import { FormControl, Validators, ReactiveFormsModule } from "@angular/forms";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { ColumnComponent } from "../../components/column/column.component";
+import { TodoDialogComponent } from "../../components/todo-dialog/todo-dialog.component";
 
 @Component({
   selector: "app-board",
@@ -87,6 +89,8 @@ import { ColumnComponent } from "../../components/column/column.component";
   ],
 })
 export class BoardComponent {
+  private dialog: Dialog = inject(Dialog);
+
   faPlus = faPlus;
   faTimes = faTimes;
   faEllipsis = faEllipsis;
@@ -237,4 +241,19 @@ export class BoardComponent {
     }
   }
 
+  openDialog(todo: ToDo): void {
+    console.log(todo);
+    const dialogRef = this.dialog.open(TodoDialogComponent, {
+      minWidth: "300px",
+      maxWidth: "50%",
+      autoFocus: false,
+      data: {
+        todo,
+      },
+    });
+
+    dialogRef.closed.subscribe((output) => {
+      console.log("Dialog closed", output);
+    });
+  }
 }

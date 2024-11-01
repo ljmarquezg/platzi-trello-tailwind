@@ -1,4 +1,4 @@
-export interface Todo {
+export default interface ToDo {
     id: string;
     title: string;
     completed: boolean;
@@ -6,7 +6,7 @@ export interface Todo {
 
 export interface Column {
     title: string;
-    todos: Todo[];
+    todos: ToDo[];
     addNew: boolean;
     optionsOpen: boolean;
 };

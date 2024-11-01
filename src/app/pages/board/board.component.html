@@ -27,7 +27,7 @@
                                             <fa-icon [icon]="faEllipsis" />
                                         </app-btn>
                                     </div>
-                                    <!-- Todo -->
+                                    <!-- ToDo -->
                                     <div 
                                         class="text-sm mt-2 min-h-2 mb-2"
                                         cdkDropList
@@ -37,7 +37,9 @@
                                         @for(todo of column.todos; track todo.id) {
                                             <div
                                                 cdkDrag
-                                                class="bg-white shadow p-2 rounded mt-2 border-b border-x-gray-300 cursor-pointer hover:bg-gray-400">
+                                                class="bg-white shadow p-2 rounded mt-2 border-b border-x-gray-300 cursor-pointer hover:bg-gray-400"
+                                                (click)="openDialog(todo)"
+                                            >
                                                 {{todo.title}}
                                             </div>
                                         }
