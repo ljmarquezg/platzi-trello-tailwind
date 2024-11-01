@@ -7,3 +7,9 @@ export enum ColorClass  {
     danger = 'text-white bg-red-500 hover:bg-red-600 focus:ring-red-300',
     gray = 'text-white bg-gray-500 hover:bg-gray-600 focus:ring-gray-300',
 }
+
+export enum TextAlign {
+    left = 'text-left',
+    center = 'text-center',
+    right = 'text-right',
+}

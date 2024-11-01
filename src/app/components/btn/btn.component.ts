@@ -1,6 +1,6 @@
 import { JsonPipe, NgClass } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { ColorClass, ColorClassOptions } from '../../models/color.model';
+import { ColorClass, ColorClassOptions, TextAlign } from '../../models/color.model';
 
 @Component({
   selector: 'app-btn',
@@ -15,6 +15,7 @@ export class BtnComponent {
   @Input() type: 'submit' | 'button' | 'reset' = 'button';
   @Input() color: ColorClassOptions = 'default';
   @Input() size?: 'lg' | 'md' |'sm' | 'xs';
+  @Input() textAlign: 'left' | 'center' | 'right' = 'center';
   
   btnSize = {
     lg: 'px-6 py-3 text-lg',
@@ -34,10 +35,24 @@ export class BtnComponent {
     return this.size
   }
 
-  get classes() {
-    const color = this.colors;
-    const size = this.sizes;
+  get textAlignClass() {
+    return TextAlign[this.textAlign];
+  }
 
-    return color + ' ' + size;
+  get classes() {
+    let classes = '';
+
+    if(this.color) {
+      classes += this.colors;
+    }
+
+    if(this.size) {
+      classes += ' ' + this.sizes;
+    }
+
+    if(this.textAlign) {
+      classes += ' ' + this.textAlignClass;
+    }
+    return classes;
   }
 }
