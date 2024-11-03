@@ -1,0 +1,44 @@
+<div class="flex flex-col h-screen">
+    <app-navbar />
+    <div class="w-full grow bg-sky-600 text-white p-6">
+        <div class="flex gap-4">
+
+            <div class="w-1/2">
+                <h1>Lista A (virtual scroll)</h1>
+                    <cdk-virtual-scroll-viewport 
+                        itemSize="50"
+                        class="h-64 w-full border overflow-y-scroll bg-white rounded divide-y"
+                    >
+                        <div *cdkVirtualFor="let product of products" class="text-gray-600  ">
+                            <img 
+                                id="avatarButton" 
+                                type="button" 
+                                class="w-10 h-10 rounded-full cursor-pointer" 
+                                [src]="product.images[0]"
+                                alt="User dropdown"
+                            >
+                            <div class="px-4 py-3 text-sm">{{product.title}}</div>
+                        </div>
+                    </cdk-virtual-scroll-viewport>
+            </div>
+
+            <div class="w-1/2">
+                <h1>Lista A (normal scroll)</h1>
+                <div class="h-64 w-full border overflow-y-scroll bg-white rounded divide-y">
+                    @for(product of products; track product.id) {
+                        <div id="userDropdown" class="z-10 bg-white divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600">
+                            <img 
+                                id="avatarButton" 
+                                type="button" 
+                                class="w-10 h-10 rounded-full cursor-pointer" 
+                                [src]="product.images[0]"
+                                alt="User dropdown"
+                            >
+                            <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">{{product.title}}</div>
+                        </div>
+                    }
+                </div>
+            </div>            
+        </div>
+    </div>
+</div>

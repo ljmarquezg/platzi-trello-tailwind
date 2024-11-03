@@ -1,0 +1,39 @@
+<div class="w-screen h-screen bg-white sm:bg-gray-50 relative flex justify-center align-middle">
+    <div class="absolute w-full h-full hidden sm:block">
+        <img class="absolute w-60 lg:w-96 left-0 bottom-0" src="/assets/svg/login-bg-left.svg" alt="bg left">
+        <img class="absolute w-60 lg:w-96 right-0 bottom-0" src="/assets/svg/login-bg-rigth.svg" alt="bg rigth">
+    </div>
+
+    <div class="relaive w-full h-full sm:h-auto sm:w-96 m-auto">
+        <div class="bg-white rounded shadow py-4 px-6 h-full sm:h-auto">
+            <header class="pt-6 pb-2 flex justify-center">
+                <img class="w-28" src="/assets/images/logo/logo-gradient-blue-trello.png" alt="logo">
+            </header>
+            <div class="mb-4">
+                <h1 class="text-center text-xl font-semi-bold pt-4 pb-8">Log In to continue</h1>
+                <form novalidate class="space-y-4">
+                    <div class="relative">
+                        <input type="email" placeholder="Enter Email" class="w-full rounded bg-gray-100 border-2 p-2 border-gray-300">
+                    </div>
+                    <div class="relative">
+                        <input type="password" placeholder="Enter Password" class="w-full rounded bg-gray-100 border-2 p-2 border-gray-300">
+                    </div>
+                    <div>
+                        <app-btn 
+                            type="submit"
+                            color="primary"
+                        >Login</app-btn>
+                    </div>
+                </form>
+                <div class="text-center pt-4 text-sm">
+                    <a routerLink="/policy" class="text-blue-500">Can't login?</a> · <a routerLink="/register" class="text-blue-500">Create an account</a>
+                </div>
+                <div class="border border-b-gray-50 w-full mt-4 mb-4"></div>
+                <div class="text-center pt-4"><img class="w-40 m-auto" src="/assets/images/logo/logo-atlassian-gray.png"></div>
+                <div class="text-center pt-4 text-xs">One account for Trello, Jira, Confluence and more.</div>
+                <div class="text-center pt-4 text-xs"><a routerLink="/policy">Privacy Policy</a> · <a href="#">User Notice</a></div>
+                <div class="text-center pt-4 text-xs">This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</div>
+            </div>
+        </div>
+    </div>
+</div>
