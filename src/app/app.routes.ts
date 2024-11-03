@@ -7,6 +7,10 @@ import { TableComponent } from './pages/table/table.component';
 
 export const routes: Routes = [
     {
+        path: '',
+        component: BoardsComponent
+    },
+    {
         path: 'login',
         component: LoginComponent
     },

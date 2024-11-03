@@ -3,12 +3,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { ColorClass, ColorClassOptions } from '../../models/color.model';
 import { NgClass } from '@angular/common';
+import { RouterLinkWithHref } from '@angular/router';
 
 @Component({
   selector: 'app-board-card',
   standalone: true,
   imports: [
     FontAwesomeModule,
+    RouterLinkWithHref,
     NgClass
   ],
   templateUrl: './board-card.component.html',
