@@ -3,13 +3,9 @@ import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { BoardComponent } from "../board/board.component";
 import { HttpClient } from '@angular/common/http';
 import {ScrollingModule} from '@angular/cdk/scrolling';
+import { Product } from '../../models/product.model';
 
-interface Product {
-  id: string;
-  name: string;
-  title: number;
-  images: string[];
-}
+
 @Component({
   selector: 'app-scroll',
   standalone: true,
